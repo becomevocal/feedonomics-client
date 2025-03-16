@@ -1,0 +1,22 @@
+{
+  "entryPoints": ["src/index.ts"],
+  "out": "docs",
+  "name": "Feedonomics Node.js API Client",
+  "includeVersion": true,
+  "excludePrivate": true,
+  "excludeExternals": true,
+  "theme": "default",
+  "readme": "README.md",
+  "categorizeByGroup": true,
+  "categoryOrder": [
+    "Client",
+    "Service",
+    "Types",
+    "*"
+  ],
+  "sort": [
+    "source-order"
+  ],
+  "gitRevision": "master",
+  "gitRemote": "origin"
+} 
