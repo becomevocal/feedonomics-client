@@ -1,5 +1,7 @@
 # Feedonomics Node.js API Client
 
+[![Publish Package](https://github.com/becomevocal/feedonomics-client/actions/workflows/publish.yml/badge.svg)](https://github.com/becomevocal/feedonomics-client/actions/workflows/publish.yml)
+
 A Node.js client library for the Feedonomics API, designed to help you integrate with Feedonomics for product data synchronization between ecommerce platforms and marketing channels.
 
 ## Features
