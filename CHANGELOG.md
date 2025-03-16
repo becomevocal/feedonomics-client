@@ -1,8 +1,20 @@
 # Changelog
 
+## 0.2.0
+
+### Minor Changes
+
+- 219f610: Implement changesets workflow to handle packaging and versioning
+
+### Patch Changes
+
+- bbba2ee: Resolve lint issues in FdxClient and FdxService
+- a1ce73b: Fix workflow permissions
+
 ## [0.1.0] - 2025-03-15
 
 ### Added
+
 - Initial release of the Feedonomics Node.js API Client
 - Core functionality for interacting with the Feedonomics API
 - FdxClient for direct API access
@@ -20,7 +32,9 @@
 - Initial README and documentation
 
 ### Changed
+
 - N/A (initial release)
 
 ### Removed
+
 - N/A (initial release)
