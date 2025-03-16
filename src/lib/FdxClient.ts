@@ -68,10 +68,12 @@ export class FdxClient {
    * @param endpoint - API endpoint being called
    */
   private logVerbose(endpoint: string) {
+    /* eslint-disable no-console */
     if (this.verbose) {
       console.log(`🔗 Full API URL: ${this.baseUrl}${endpoint}`);
       console.log(`🔐 API Key: ${this.apiToken ? '[Set]' : '[Not Set]'}`);
     }
+    /* eslint-enable no-console */
   }
 
   /**

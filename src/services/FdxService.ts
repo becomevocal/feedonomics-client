@@ -628,7 +628,6 @@ export class FdxService {
   ): ImportConfig {
     const mode = isCreate ? 'create' : 'update';
     const connectionInfo = this.buildConnectionInfo(user, [channelId], mode);
-    const fileInfo = { request_type: 'get' };
     
     const importConfig: ImportConfig = {
       name: this.MAIN_IMPORT_NAME,
@@ -659,11 +658,10 @@ export class FdxService {
     mode: string
   ): string {
     const connectionInfo = this.buildConnectionInfo(user, [channelId], mode);
-    const fileInfo = { request_type: 'get' };
     
     return this.client.generateBigCommercePreprocessorUrl({
       connection_info: connectionInfo,
-      file_info: fileInfo
+      file_info: { request_type: 'get' }
     });
   }
 
@@ -840,7 +838,7 @@ export class FdxService {
       const accountId = accountResult.data.id;
 
       // Step 2: Invite primary user if email provided
-      let primaryUserEmail = params.userEmail;
+      const primaryUserEmail = params.userEmail;
       if (primaryUserEmail) {
         const inviteResult = await this.client.invitePrimaryUser(accountId, primaryUserEmail);
         if (!inviteResult.success) {

@@ -1269,7 +1269,7 @@ describe('FdxClient', () => {
 
     it('should handle successful response interceptor', async () => {
       const mockResponse = { data: 'test' };
-      const client = new FdxClient(mockConfig);
+      const _client = new FdxClient(mockConfig);
       const interceptor = (mockedAxios.create() as any).interceptors.response.use.mock.calls[0][0];
       
       const result = await interceptor(mockResponse);
@@ -1687,7 +1687,7 @@ describe('FdxClient', () => {
         timeout: 30000
       };
       
-      const customClient = new FdxClient(customConfig);
+      const _customClient = new FdxClient(customConfig);
       
       expect(mockedAxios.create).toHaveBeenCalledWith(expect.objectContaining({
         timeout: 30000
@@ -1710,7 +1710,7 @@ describe('FdxClient', () => {
       const error = new Error('Interceptor error');
       const consoleSpy = jest.spyOn(console, 'error');
       
-      const client = new FdxClient(mockConfig);
+      const _client = new FdxClient(mockConfig);
       const interceptor = (mockedAxios.create() as any).interceptors.response.use.mock.calls[0][1];
       
       await expect(interceptor(error)).rejects.toThrow('Interceptor error');
