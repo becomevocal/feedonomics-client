@@ -1,6 +1,6 @@
 # Feedonomics Node.js API Client
 
-A Node.js client library for the Feedonomics API, designed to help you integrate with Feedonomics for product data synchronization between eCommerce platforms and marketing channels.
+A Node.js client library for the Feedonomics API, designed to help you integrate with Feedonomics for product data synchronization between ecommerce platforms and marketing channels.
 
 ## Features
 
@@ -18,13 +18,13 @@ A Node.js client library for the Feedonomics API, designed to help you integrate
 ## Installation
 
 ```bash
-npm install feedonomics-client
+npm install fdx-client
 ```
 
 ## Quick Start
 
 ```typescript
-import { createFeedonomicsApi } from 'feedonomics-client';
+import { createFeedonomicsApi } from 'fdx-client';
 
 // Create both client and service with one call
 const { client, service } = createFeedonomicsApi({
@@ -38,7 +38,7 @@ const { client, service } = createFeedonomicsApi({
 If you prefer more control, you can use the client directly:
 
 ```typescript
-import { createClient } from 'feedonomics-client';
+import { createClient } from 'fdx-client';
 
 const client = createClient({
   apiToken: 'your-api-token',
@@ -64,14 +64,61 @@ getAccounts();
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/feedonomics-client.git
-cd feedonomics-client
+git clone https://github.com/yourusername/fdx-client.git
+cd fdx-client
 
 # Install dependencies
 npm install
 
 # Build the library
 npm run build
+```
+
+### Release Process
+
+This project uses [Changesets](https://github.com/changesets/changesets) to manage versions, create changelogs, and publish to npm. Here's how to create a new release:
+
+#### Adding a Changeset
+
+When making changes that should be published in a new version:
+
+1. Run `npm run changeset`
+2. Follow the prompts to:
+   - Select the type of change (major, minor, patch)
+   - Provide a description of the change (this will appear in the changelog)
+3. Commit the generated changeset file along with your changes
+
+#### Automated Release Process
+
+The repository is configured with GitHub Actions to:
+
+1. Automatically create a "Version Packages" PR when changesets are detected on the main branch
+2. When the "Version Packages" PR is merged:
+   - Package versions will be updated according to the changesets
+   - CHANGELOG.md will be updated
+   - Changes will be published to npm
+   - A GitHub Release will be created
+
+#### Required Environment Variables
+
+For the automated release process to work, the following GitHub repository secrets are required:
+
+- `NPM_TOKEN`: An npm token with publish permissions
+  - Create one at https://www.npmjs.com/settings/your-username/tokens
+  - Add it as a repository secret in GitHub: `Settings > Secrets and variables > Actions`
+
+> **Note:** The workflow also uses `GITHUB_TOKEN` which is automatically provided by GitHub Actions and does not need to be manually configured.
+
+#### Manual Release
+
+If needed, you can also perform a manual release:
+
+```bash
+# Update version and changelog based on changesets
+npm run version
+
+# Publish to npm (requires npm login)
+npm run release
 ```
 
 ## Running Examples

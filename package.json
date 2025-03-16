@@ -20,7 +20,10 @@
     "docs": "typedoc --options typedoc.json",
     "example:manual-bigcommerce-setup": "ts-node src/examples/bigcommerce-manual-setup.ts",
     "example:automated-bigcommerce-setup": "ts-node src/examples/bigcommerce-automated-setup.ts",
-    "example:verify-api-token": "ts-node src/examples/verify-token.ts"
+    "example:verify-api-token": "ts-node src/examples/verify-token.ts",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "npm run build && changeset publish"
   },
   "author": "Nate Stewart <nate.stewart@bigcommerce.com>",
   "license": "MIT",
@@ -29,6 +32,7 @@
     "dotenv": "^16.3.1"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.28.1",
     "@types/jest": "^29.5.3",
     "@types/node": "^20.4.5",
     "@typescript-eslint/eslint-plugin": "^6.2.0",
