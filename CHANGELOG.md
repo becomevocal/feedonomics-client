@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.0
+
+### Minor Changes
+
+- 04844c8: Update to node >=20
+
 ## 0.2.0
 
 ### Minor Changes
